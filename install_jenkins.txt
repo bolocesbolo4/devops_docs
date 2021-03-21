@@ -1,0 +1,42 @@
+Below are the steps given to install Jenkins using a shell script. You will have to connect to the machine on which you want to install Jenkins.
+Open the terminal of the machine, first get into root and then create a new file with name jenkins.sh as shown below:
+
+sudo su
+sudo nano jenkins.sh
+
+Now you will have to paste the below given content in the file:
+
+#!/bin/sh
+sudo apt update -y
+sudo apt install openjdk-8-jdk -y
+wget -q -O - http://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+sudo apt install jenkins -y
+
+
+Now you will have to change the permissions of this shell script you have created. Run the below command to change the permissions and make the file executable:
+
+sudo chmod -R 777 jenkins.sh
+
+
+Once the permissions are changed for the file, you will have to run this shell script in order to install jenkins on the machine. Execute the below command to run the file:
+
+./jenkins.sh
+
+
+Once the command is successfully run, jenkins will be installed on the machine. You can verify it using the below command:
+
+sudo service jenkins status
+
+
+Once the Jenkins service is installed on the machine you can access it on the browser by using the IP of the machine and the port number. Open the browser(chrome/internete explorer) and enter the IP of the machine and the port 8080 in the below mentioned fashion:
+IP_address:8080
+
+
+For the first time it will ask you to enter the initialAdminPassword. The password is in your machine. Open the terminal and run the below command to get the password:
+
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+Copy the output you get and paste it in the browser. In the next step select install suggested plugins and then you can move ahead with the installation. 
