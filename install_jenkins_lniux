@@ -1,0 +1,7 @@
+sudo yum install java-1.8.0-openjdk-devel -y
+sudo yum install -y wget
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+sudo yum install jenkins -y
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+systemctl status jenkins
