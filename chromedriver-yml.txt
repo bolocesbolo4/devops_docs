@@ -27,7 +27,7 @@
      update_cache: yes
 
   - name: download chromedriver
-    command: wget https://chromedriver.storage.googleapis.com/87.0.4280.88/chromedriver_linux64.zip
+    command: https://chromedriver.storage.googleapis.com/91.0.4472.19/chromedriver_linux64.zip
 
   - name: install unzip
     command: apt install unzip
