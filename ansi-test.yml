@@ -1,0 +1,9 @@
+- hosts: slave
+  become: true
+  vars:
+    ansible_python_interpreter: "/usr/bin/python3"
+  tasks:
+  - name: Install Git
+    package:
+     name: git
+     state: present
